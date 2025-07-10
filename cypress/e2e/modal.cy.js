@@ -1,6 +1,6 @@
 describe("Composant Modal", () => {
   beforeEach(() => {
-    cy.visit("tailwindcss-components/components/modal.html");
+    cy.visit("../pages/modal.html");
   });
 
   it("Tester ouverture de la fênetre modale au clique sur display", () => {
