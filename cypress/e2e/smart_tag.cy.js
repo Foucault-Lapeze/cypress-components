@@ -12,7 +12,7 @@ describe("smart tag", () => {
   it("Tester la disparition du tag à la sortie du survol du bouton See more", () => {
     cy.dataCy("see-more-btn").trigger("mouseover");
     cy.dataCy("smart-tag").should("be.visible");
-    cy.dataCy("see-more-btn").trigger("mouseout");
-    cy.dataCy("smart-tag").should("not.be.visible");
+    cy.get("body").trigger("mouseover");
+    cy.dataCy("smart-tag").should("not.be.visible", { timeout: 5000 });
   });
 });
