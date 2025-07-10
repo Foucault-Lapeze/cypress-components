@@ -22,12 +22,14 @@
 <body class="antialiased bg-gray-100" style="font-family: 'Montserrat';">
     <!-- Scroll: testing purposes -->
     <div x-data="" class="flex justify-center items-center h-screen bg-gray-200">
-        <button class="p-6 font-bold text-white text-5xl rounded-sm bg-gray-900 focus:outline-none transition duration-300 hover:bg-gray-700 uppercase" 
-                style="font-family: Poppins;"
-                @click="window.scrollTo({ top: document.documentElement.clientHeight, behavior: 'smooth' })"
-        >
-            Scroll
-        </button>
+        <button data-cy="scroll-btn"
+        class="p-6 font-bold text-white text-5xl rounded-sm bg-gray-900 focus:outline-none transition duration-300 hover:bg-gray-700 uppercase" 
+        style="font-family: Poppins;"
+        @click="window.scrollTo({ top: document.documentElement.clientHeight, behavior: 'smooth' })"
+>
+    Scroll
+</button>
+
     </div>
 
     <div class="flex flex-col h-screen items-center justify-center">      
@@ -39,7 +41,8 @@
     </div>
 
     <div class="fixed bottom-3 right-3"
-         x-data="{ currentScrollPosition: window.pageYOffset }"
+    data-cy="scroll-to-top"
+    x-data="{ currentScrollPosition: window.pageYOffset }"
          x-show="(currentScrollPosition != 0) ? true : false"
          x-transition:enter="transition ease-out duration-1000"
          x-transition:enter-start="opacity-0 transform -translate-y-48"
@@ -48,10 +51,11 @@
          x-transition:leave-start="opacity-100 transform translate-0 rotate-0"
          x-transition:leave-end="opacity-0 transform translate-y-4 rotate-180 opacity-0"
     >
-        <button class="focus:outline-none p-3 bg-black bg-opacity-10 rounded-sm z-30 hover:bg-opacity-20 hover:opacity-100 transition duration-300 ease-in-out"
-                @click="window.scrollTo({ top: 0, behavior: 'smooth' })"
-                @scroll.window="currentScrollPosition = window.pageYOffset"
-        >
+    <button data-cy="scroll-to-top-btn"
+    class="focus:outline-none p-3 bg-black bg-opacity-10 rounded-sm z-30 hover:bg-opacity-20 hover:opacity-100 transition duration-300 ease-in-out"
+    @click="window.scrollTo({ top: 0, behavior: 'smooth' })"
+    @scroll.window="currentScrollPosition = window.pageYOffset"
+>
             <svg xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 class="w-3 h-3 fill-current"
