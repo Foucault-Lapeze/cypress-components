@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "cypress": "^14.5.1"
+  },
+  "name": "cypress-components",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Foucault-Lapeze/cypress-components.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Foucault-Lapeze/cypress-components/issues"
+  },
+  "homepage": "https://github.com/Foucault-Lapeze/cypress-components#readme",
+  "description": ""
+}
